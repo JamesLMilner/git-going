@@ -1,0 +1,17 @@
+{
+
+ "1" : {
+   "use" : "Initialise a git repository",
+   "command" : "git init",
+   "complexity" : "0",
+   "tags" : ["initialise", "start", "create"]
+ },
+
+ "2" : {
+   "use" : "Add files to be staged",
+   "command" : "git init",
+   "complexity" : "0",
+   "tags" : ["initialise", "start", "create"]
+ }
+
+}
