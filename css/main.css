@@ -4,14 +4,22 @@ html, body, main {
   padding: 0px;
   font-family: 'Lato', sans-serif;
   background-color: #272727;
+  color: white;
 }
 header {
   background-image: url("../imgs/header.png");
   background-size:cover;
   padding: 0px;
   margin: 0px;
-  height: 300px;
-
+  height: 400px;
+}
+h5.subheading {
+  padding: 0px;
+  margin: 0px;
+  color: white;
+  font-size: 24px;
+  text-align: center;
+  padding-top: 20px;
 }
 h1.title {
   padding: 0px;
