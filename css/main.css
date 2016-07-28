@@ -1,0 +1,39 @@
+html, body, main {
+  height: 100%;
+  width: 100%;
+  padding: 0px;
+  font-family: 'Lato', sans-serif;
+  background-color: #272727;
+}
+header {
+  background-image: url("../imgs/header.png");
+  background-size:cover;
+  padding: 0px;
+  margin: 0px;
+  height: 300px;
+
+}
+h1.title {
+  padding: 0px;
+  margin: 0px;
+  color: white;
+  font-size: 64px;
+  text-align: center;
+}
+div.title-holder {
+  background-color: rgba(97, 97, 97, 0.55);
+  height: 100%;
+}
+img.git-logo {
+  width: 64px;
+  height: 64px;
+  vertical-align: bottom;
+}
+div.header-rows {
+  height: 33%;
+padding: 0px;
+margin: 0px;
+}
+div.search {
+  opacity: 0.85;
+}
