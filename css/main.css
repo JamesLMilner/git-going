@@ -6,6 +6,11 @@ html, body, main {
   background-color: #272727;
   color: white;
 }
+code {
+  font-size: 12px;
+  padding: 6px !important;
+
+}
 header {
   background-image: url("../imgs/header.png");
   background-size:cover;
@@ -44,4 +49,20 @@ margin: 0px;
 }
 div.search {
   opacity: 0.85;
+}
+div.commands {
+  padding: 15px;
+}
+div.command-holder {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+span.what-it-do {
+  font-weight: bold;
+  padding-right: 10px;
+}
+.command-row {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

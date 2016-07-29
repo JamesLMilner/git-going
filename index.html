@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <link href="css/main.css" rel="stylesheet">
+    <link href="css/prism.css" rel="stylesheet">
   </head>
 
   <style>
@@ -37,22 +38,26 @@
 
         <div class="row header-rows">
 
-          <div class="col s2">
-          </div>
+          <div class="col s2"></div>
 
           <div class="col s8 search">
 
-          <form>
-             <div center class="input-field">
-               <input id="search" type="search" required placeholder="Search...">
-               <label for="search"></label>
-             </div>
-           </form>
+            <form id="search" v-on:submit.prevent="onSubmit">
+               <div center class="input-field">
+
+                 <input id="search"
+                  type="search"
+                  v-model="searchInput"
+                  required
+                  placeholder="Search...">
+                 <label for="search"></label>
+
+               </div>
+             </form>
 
           </div>
 
-          <div class="col s2">
-          </div>
+          <div class="col s2"></div>
 
         </div>
 
@@ -61,24 +66,39 @@
 
       <content>
         <div class="row">
-          <div class="col s2"></div>
-          <div class="col s8">
+          <div class="col s1"></div>
+          <div class="col s10">
 
-            <div class="commands">
+            <div id="commands" class="commands">
 
+                <div
+                  class="command-holder card grey"
+                  v-for="command in commands"
+                  v-show="show(command)">
+
+                  <div class="command-row">
+                    <span class="what-it-do"> What does it do? </span>
+                    {{ command.use }}
+                  </div>
+                  <code class="command-row language-git">
+                     {{ command.command }}
+                  </code>
+                  <div class="command-row">
+                     {{ command.explanation }}
+                  </div>
+
+                </div>
 
             </div>
-            
+
           </div>
-          <div class="col s2"></div>
+          <div class="col s1"></div>
         </div>
       </content>
 
     </main>
-
-    <!--Import jQuery before materialize.js-->
-    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="bower_components/materialize/dist/js/materialize.min.js"></script>
-    <script type="text/javascript" src="js/generate.js"></script>
+    <script type="text/javascript" src="bower_components/vue/dist/vue.min.js"></script>
+    <script type="text/javascript" src="js/git-going.js"></script>
+    <script type="text/javascript" src="js/prism.js"></script>
   </body>
 </html>
