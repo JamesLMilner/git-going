@@ -71,11 +71,10 @@
 
             <div id="commands" class="commands">
 
-              <div v-if="matching()">
                 <div
                   class="command-holder card grey"
-                  v-for="command in commands"
-                  v-if="show(command)">
+                  v-for="command in getCommands()"
+                >
 
                   <div class="command-row">
                     <span class="what-it-do"> What does it do? </span>
@@ -89,12 +88,13 @@
                   </div>
 
                 </div>
-              </div>
-              <div v-else>
-                <h5 class="not-found">
-                  Sorry, no commands found :( Why not add one?
-                </h5>
-              </div>
+                <div v-if="!getCommands()">
+                  <h5 class="not-found">
+                    Sorry, no commands found :(
+                    <br><br>
+                    Why not <a href="https://www.github.com/JamesMilnerUK/git-going">add one</a>?
+                  </h5>
+                </div>
 
             </div>
 

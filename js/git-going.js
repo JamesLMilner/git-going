@@ -30,7 +30,8 @@ var Store = {
   state : {
     searchInput : "",
     searched : false,
-    commands: CommandsList
+    commands: CommandsList,
+    totalShown : -1
   },
 
   textSearch : function() {
@@ -39,8 +40,19 @@ var Store = {
 
   blankSearch : function() {
     this.state.searched = false;
-  }
+  },
 
+  resetTotalShown : function() {
+    this.state.totalShown = -1;
+  },
+
+  decrementTotalShown : function() {
+    this.state.totalShown -= 1;
+  },
+
+  incrementTotalShown : function() {
+    this.state.totalShown += 1;
+  }
 
 };
 
@@ -61,6 +73,7 @@ var Search = new Vue({
       } else {
         Store.blankSearch();
       }
+      Store.resetTotalShown();
     }
   }
 
@@ -71,18 +84,17 @@ var Commands = new Vue({
   el: '#commands',
   data: Store.state,
   methods: {
-    show : function(command) {
-
+    getCommands : function() {
       var searched = this.searched;
-      var tags = command.tags.indexOf(this.searchInput) !== -1;
-      return !searched || (searched && tags);
-
-    },
-    matching : function() {
-
-      return true;
-
+      var searchInput = this.searchInput;
+      var tagged = function(command) {
+        return !searched ||
+               command.tags.indexOf(searchInput) !== -1;
+      };
+      var commands = this.commands.filter(tagged);
+      return (commands.length) ? commands : false;
     }
+
   }
 
 });
