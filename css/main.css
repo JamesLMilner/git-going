@@ -17,7 +17,9 @@ header {
   background-image: url("../imgs/header.png");
   background-size:cover;
   padding: 0px;
-  margin: 0px;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 30px;
   height: 400px;
 }
 h5.subheading {
@@ -71,6 +73,12 @@ span.what-it-do {
 h5.not-found {
   padding-top: 70px;
   text-align: center;
+}
+footer.footer {
+  text-align: center;
+  font-size: 12px;
+  padding-bottom: 20px;
+  margin-top: 40px;
 }
 
 /** Media queries **/
