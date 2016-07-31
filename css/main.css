@@ -80,6 +80,21 @@ footer.footer {
   padding-bottom: 20px;
   margin-top: 40px;
 }
+#search {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+/** Transitions **/
+.staggered-transition {
+    transition: all .3s ease;
+    overflow: hidden;
+    margin: 0;
+
+}
+.staggered-enter, .staggered-leave {
+    opacity: 0;
+}
 
 /** Media queries **/
 @media only screen and (max-width: 500px) {
@@ -96,5 +111,9 @@ footer.footer {
   .commands {
     padding: 0px !important;
     padding-top: 20px !important;
+  }
+  #search {
+    padding: 5px;
+    width: 100%;
   }
 }
