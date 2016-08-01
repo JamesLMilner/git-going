@@ -13,6 +13,12 @@ code {
 a {
   color: #f05133; /** Git orange :) */
 }
+a.modal-close {
+  color: #fff;
+}
+div.modal-footer {
+  background-color: #1d1d1d !important;
+}
 header {
   background-image: url("../imgs/header.png");
   background-size:cover;
@@ -89,6 +95,27 @@ img.vue-logo {
 #search {
   padding-left: 10px;
   padding-right: 10px;
+}
+button.btn-color {
+  background-color: #272822;
+  font-size: 14px;
+  padding: 5px;
+  margin: 0px;
+  line-height: inherit;
+  vertical-align: middle;
+  float: right;
+}
+div.first-line {
+  font-size: 16px;
+}
+span.token {
+  color: #358792 !important;
+}
+div.modal {
+  background-color: #272727 !important;
+}
+.btn:hover, .btn-large:hover {
+    background-color: #358792;
 }
 
 /** Transitions **/

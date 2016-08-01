@@ -76,17 +76,39 @@
                   v-for="command in getCommands()"
                   transition="staggered"
                   stagger="50"
+                  track-by="$index"
                 >
 
-                  <div class="command-row">
-                    <span class="what-it-do"> What does it do? </span>
-                    {{ command.use }}
+                  <div class="command-row first-line">
+                    I want to
+                    <span class="what-it-do"> {{ command.use.toLowerCase() }} </span>
                   </div>
                   <code class="command-row language-git">
                      {{ command.command }}
                   </code>
                   <div class="command-row">
-                     {{ command.explanation }}
+
+                    <a class="modal-trigger" href="#modal-{{$index}}">
+                      <button
+                        v-if="command.explanation"
+                        class="btn waves-effect waves-light btn-color">
+                         More Info
+                      </button>
+                    </a>
+
+                    <!-- Modal Structure -->
+                    <div id="modal-{{$index}}" class="modal">
+                      <div class="modal-content">
+                        <h4>{{ command.command }}</h4>
+                        <p>{{ command.explanation }}</p>
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          class="btn waves-effect waves-light btn-color">
+                          <a href="#!" class="modal-action modal-close">Super</a>
+                        </button>
+                      </div>
+                    </div>
                   </div>
 
                 </div>
@@ -94,7 +116,7 @@
                   <h5 class="not-found">
                     Sorry, no commands found :(
                     <br><br>
-                    Why not <a href="https://www.github.com/JamesMilnerUK/git-going">add one</a>?
+                    Why not <a href="https://github.com/JamesMilnerUK/git-going#contributing">add one</a>?
                   </h5>
                 </div>
 
@@ -110,8 +132,12 @@
       </footer>
     </main>
     <script type="text/javascript" src="bower_components/vue/dist/vue.min.js"></script>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/materialize/dist/js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/prism.js"></script>
+
     <script type="text/javascript" src="js/git-going-commands.js"></script>
     <script type="text/javascript" src="js/git-going.js"></script>
-    <script type="text/javascript" src="js/prism.js"></script>
+
   </body>
 </html>
