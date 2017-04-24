@@ -68,7 +68,7 @@ var CommandsList = [
    {
      "use" : "Checkout a branch",
      "explanation" : "",
-     "command" : "git checkout some-branch",
+     "command" : "git checkout somebranch",
      "complexity" : "0",
      "tags" : ["branch", "branching", "checkout"]
    },
@@ -84,7 +84,7 @@ var CommandsList = [
    {
      "use" : "Get the latest changes from some remote branch",
      "explanation" : "",
-     "command" : "git pull some-remote some-branch",
+     "command" : "git pull some-remote somebranch",
      "complexity" : "0",
      "tags" : ["pull", "latest", "get", "changes"]
    },
@@ -132,7 +132,7 @@ var CommandsList = [
    {
      "use" : "Rename my current working branch",
      "explanation" : "",
-     "command" : "git branch -m newbranch",
+     "command" : "git branch -m somebranch",
      "complexity" : "0",
      "tags" : ["rename", "branch"]
    },
@@ -140,7 +140,7 @@ var CommandsList = [
    {
      "use" : "Delete a remote branch",
      "explanation" : "",
-     "command" : "git push origin --delete branch_name",
+     "command" : "git push origin --delete somebranch",
      "complexity" : "1",
      "tags" : ["delete", "remote", "branch"]
 
@@ -180,11 +180,27 @@ var CommandsList = [
 
    // Reset
    {
-     "use" : "completely throw away (undo) uncommited changes back to the last commit",
+     "use" : "Completely throw away (undo) uncommited changes back to the last commit",
      "explanation" : "",
      "command" : "git reset --HARD",
      "complexity" : "1",
      "tags" : ["reset", "undo", ]
+   },
+
+    {
+     "use" : "List all the files currently being tracked under a branch",
+     "explanation" : "",
+     "command" : "git ls-tree -r somebranch --name-only",
+     "complexity" : "1",
+     "tags" : ["list", "files", "tracked"]
+    },
+
+    {
+     "use" : "Do a diff between the last commit and any staged changes",
+     "explanation" : "",
+     "command" : "git diff --staged",
+     "complexity" : "1",
+     "tags" : ["staged", "diff", "changes", "view"]
    }
 
 ];
